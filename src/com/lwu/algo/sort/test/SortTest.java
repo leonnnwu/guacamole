@@ -1,9 +1,6 @@
 package com.lwu.algo.sort.test;
 
-import com.lwu.algo.sort.main.sort.BubbleSort;
-import com.lwu.algo.sort.main.sort.InsertionSort;
-import com.lwu.algo.sort.main.sort.SelectionSort;
-import com.lwu.algo.sort.main.sort.ShellSort;
+import com.lwu.algo.sort.main.sort.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,7 +18,7 @@ public class SortTest {
 
     @Test
     public void testInsertionSort() throws Exception {
-        InsertionSort insertionSort = new InsertionSort();
+        SortBase insertionSort = new InsertionSort();
 
         Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
 
@@ -36,7 +33,7 @@ public class SortTest {
 
     @Test
     public void testSelectionSort(){
-        SelectionSort selectionSort = new SelectionSort();
+        SortBase selectionSort = new SelectionSort();
 
         Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
 
@@ -51,7 +48,7 @@ public class SortTest {
 
     @Test
     public void testShellSort() {
-        ShellSort shellSort = new ShellSort();
+        SortBase shellSort = new ShellSort();
 
         Integer[] localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
         shellSort.sort(localArray);
@@ -69,7 +66,7 @@ public class SortTest {
         assertResult(OUTPUT_SHORT, localArray);
 
         localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
-        bubbleSort.sort(localArray);
+        bubbleSort.sort2(localArray);
         assertResult(OUTPUT_LONG, localArray);
     }
 
