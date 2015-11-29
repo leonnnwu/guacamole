@@ -14,5 +14,13 @@ public abstract class SortBase {
         a[j] = temp;
     }
 
+    protected static void printOut(Comparable[] a) {
+        for(int i=0; i<a.length; i++) {
+            System.out.print(a[i] + ", ");
+        }
+
+        System.out.println();
+    }
+
     public abstract void sort(Comparable[] a);
 }
