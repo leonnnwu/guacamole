@@ -1,5 +1,6 @@
 package com.lwu.algo.sort.test;
 
+import com.lwu.algo.sort.main.sort.BubbleSort;
 import com.lwu.algo.sort.main.sort.InsertionSort;
 import com.lwu.algo.sort.main.sort.SelectionSort;
 import com.lwu.algo.sort.main.sort.ShellSort;
@@ -54,6 +55,21 @@ public class SortTest {
 
         Integer[] localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
         shellSort.sort(localArray);
+        assertResult(OUTPUT_LONG, localArray);
+    }
+
+    @Test
+    public void testBubbleSort(){
+        BubbleSort bubbleSort = new BubbleSort();
+
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
+
+        bubbleSort.sort(localArray);
+
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        bubbleSort.sort(localArray);
         assertResult(OUTPUT_LONG, localArray);
     }
 
