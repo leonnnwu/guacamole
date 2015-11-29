@@ -1,7 +1,7 @@
-package com.lwu.algo.sort.main;
+package com.lwu.algo.sort.main.sort;
 
 /**
- * Created by Leon on 11/28/15.
+ * Gaps + Insertion Sort
  */
 public class ShellSort extends SortBase {
 

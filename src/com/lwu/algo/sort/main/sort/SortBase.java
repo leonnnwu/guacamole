@@ -1,4 +1,4 @@
-package com.lwu.algo.sort.main;
+package com.lwu.algo.sort.main.sort;
 
 /**
  * Created by lwu on 11/24/15.

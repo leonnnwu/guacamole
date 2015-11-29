@@ -1,8 +1,8 @@
 package com.lwu.algo.sort.test;
 
-import com.lwu.algo.sort.main.InsertionSort;
-import com.lwu.algo.sort.main.SelectionSort;
-import com.lwu.algo.sort.main.ShellSort;
+import com.lwu.algo.sort.main.sort.InsertionSort;
+import com.lwu.algo.sort.main.sort.SelectionSort;
+import com.lwu.algo.sort.main.sort.ShellSort;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

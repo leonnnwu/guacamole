@@ -1,4 +1,4 @@
-package com.lwu.algo.sort.main;
+package com.lwu.algo.sort.main.sort;
 
 /**
  * Insert the pivot into the appropriate position
