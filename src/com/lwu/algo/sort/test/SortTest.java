@@ -2,6 +2,7 @@ package com.lwu.algo.sort.test;
 
 import com.lwu.algo.sort.main.InsertionSort;
 import com.lwu.algo.sort.main.SelectionSort;
+import com.lwu.algo.sort.main.ShellSort;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,29 +13,48 @@ import java.util.Arrays;
  */
 public class SortTest {
 
-    public static final Integer[] input = {1, 4, 3, 5, 6, 2};
-    public static final Integer[] output = {1,2,3,4,5,6};
+    public static final Integer[] INPUT_SHORT = {1, 4, 3, 5, 6, 2};
+    public static final Integer[] INPUT_LONG = {62, 83, 18, 53, 7, 17, 95, 86, 47, 69, 25, 28};
+    public static final Integer[] OUTPUT_SHORT = {1,2,3,4,5,6};
+    public static final Integer[] OUTPUT_LONG = {7, 17, 18, 25, 28, 47, 53, 62, 69, 83, 86, 95};
 
     @Test
     public void testInsertionSort() throws Exception {
         InsertionSort insertionSort = new InsertionSort();
 
-        Integer[] localArray = Arrays.copyOf(input, input.length);
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
 
         insertionSort.sort(localArray);
 
-        assertResult(output, localArray);
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        insertionSort.sort(localArray);
+        assertResult(OUTPUT_LONG, localArray);
     }
 
     @Test
     public void testSelectionSort(){
         SelectionSort selectionSort = new SelectionSort();
 
-        Integer[] localArray = Arrays.copyOf(input, input.length);
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
 
         selectionSort.sort(localArray);
 
-        assertResult(output, localArray);
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        selectionSort.sort(localArray);
+        assertResult(OUTPUT_LONG, localArray);
+    }
+
+    @Test
+    public void testShellSort() {
+        ShellSort shellSort = new ShellSort();
+
+        Integer[] localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        shellSort.sort(localArray);
+        assertResult(OUTPUT_LONG, localArray);
     }
 
     private void assertResult(Comparable[] expect, Comparable[] actual) {
