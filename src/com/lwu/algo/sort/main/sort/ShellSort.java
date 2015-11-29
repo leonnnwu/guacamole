@@ -2,6 +2,11 @@ package com.lwu.algo.sort.main.sort;
 
 /**
  * Gaps + Insertion Sort
+ *
+ * Stable:  No
+ * Extra Space: O(1)
+ * Time complexity: O(n^3/2)
+ * Adaptive: O(nlgn) when nearly sorted
  */
 public class ShellSort extends SortBase {
 

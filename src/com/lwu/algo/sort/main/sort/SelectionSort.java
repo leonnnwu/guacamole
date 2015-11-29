@@ -2,6 +2,11 @@ package com.lwu.algo.sort.main.sort;
 
 /**
  * Find the smallest value and put on the left
+ *
+ * Stable:  No
+ * Extra Space: O(1)
+ * Time complexity: O(n^2)
+ * Adaptive: No
  */
 public class SelectionSort extends SortBase{
 

@@ -2,6 +2,11 @@ package com.lwu.algo.sort.main.sort;
 
 /**
  * Insert the pivot into the appropriate position
+ *
+ * Stable:  Yes
+ * Extra Space: O(1)
+ * Time complexity: O(n^2)
+ * Adaptive: O(n) when nearly sorted
  */
 public class InsertionSort extends SortBase {
 
