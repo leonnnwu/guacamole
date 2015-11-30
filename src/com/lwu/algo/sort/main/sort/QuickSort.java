@@ -8,13 +8,18 @@ import java.util.Random;
  *  2. Partition
  *  3. Recursive
  *
- * Stable:  NO
- * Extra Space: O(lg(n))
- * Time complexity: O(n^2), typically O(nlg(n))
- * Adaptive: NO
  */
 public class QuickSort extends SortBase {
 
+    /**
+     * 2-way partition
+     *
+     * Stable:  NO
+     * Extra Space: O(lg(n))
+     * Time complexity: O(n^2), typically O(nlg(n))
+     * Adaptive: NO
+     * @param a
+     */
     @Override
     public void sort(Comparable[] a) {
         int len = a.length;
@@ -45,5 +50,13 @@ public class QuickSort extends SortBase {
 
         partition(a, start, index-1);
         partition(a, index+1, end);
+    }
+
+    /**
+     * 3-way partition
+     * @param a
+     */
+    public void sort2(Comparable[] a){
+
     }
 }
