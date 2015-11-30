@@ -14,6 +14,7 @@ import java.util.Random;
  * Adaptive: NO
  */
 public class QuickSort extends SortBase {
+
     @Override
     public void sort(Comparable[] a) {
         int len = a.length;
@@ -26,15 +27,23 @@ public class QuickSort extends SortBase {
             return;
         }
 
-        //Choose a pivot
         Random random = new Random();
         int pivot = random.nextInt(end-start+1) + start;
-        exchange(a, start, pivot);
+        exchange(a, pivot, end);
 
-        pivot = start;
+        pivot = end;
 
-        for(int i=start+1; i<=end; i++) {
-//            if(a[i] )
+        int index = start;
+
+        for(int i=start; i<end; i++) {
+            if(less(a[i], a[pivot])) {
+                exchange(a, i, index++);
+            }
         }
+
+        exchange(a, index, pivot);
+
+        partition(a, start, index-1);
+        partition(a, index+1, end);
     }
 }
