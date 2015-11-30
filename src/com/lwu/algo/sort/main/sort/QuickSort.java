@@ -57,6 +57,46 @@ public class QuickSort extends SortBase {
      * @param a
      */
     public void sort2(Comparable[] a){
+        int len = a.length;
 
+        partition2(a, 0, len - 1);
+    }
+
+    private void partition2(Comparable[] a, int start, int end) {
+        if(start >= end) {
+            return;
+        }
+
+        Random random = new Random();
+        int pivot = random.nextInt(end-start+1) + start;
+        exchange(a, pivot, end);
+
+        pivot = end;
+
+        int cursor = start;
+        int k = start;
+        int n = end;
+
+        while(cursor<n) {
+            if(less(a[cursor], a[pivot])) {
+                exchange(a, cursor++, k++);
+            } else if(a[cursor] == a[pivot]) {
+                exchange(a, cursor, --n);
+            } else {
+                cursor++;
+            }
+        }
+
+        //Move the pivots to the center
+        int len_min = Math.min(n-k, end-n+1);
+        int indexOfGreater = k;
+        int indexOfPivot = end-len_min+1;
+
+        while(indexOfGreater < k+len_min) {
+            exchange(a, indexOfGreater++, indexOfPivot++);
+        }
+
+        partition2(a, start, k-1);
+        partition2(a, k, end);
     }
 }
