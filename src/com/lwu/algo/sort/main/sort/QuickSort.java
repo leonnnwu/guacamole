@@ -74,29 +74,27 @@ public class QuickSort extends SortBase {
         pivot = end;
 
         int cursor = start;
-        int k = start;
-        int n = end;
+        int firstGreater = start;
 
-        while(cursor<n) {
-            if(less(a[cursor], a[pivot])) {
-                exchange(a, cursor++, k++);
-            } else if(a[cursor] == a[pivot]) {
-                exchange(a, cursor, --n);
+        while(cursor < pivot) {
+            if(less(a[cursor], a[end])) {
+                exchange(a, cursor++, firstGreater++);
+            } else if(a[cursor].equals(a[end])) {
+                exchange(a, cursor, --pivot);
             } else {
                 cursor++;
             }
         }
 
         //Move the pivots to the center
-        int len_min = Math.min(n-k, end-n+1);
-        int indexOfGreater = k;
+        int len_min = Math.min(pivot-firstGreater, end-pivot+1);
+        int indexOfGreater = firstGreater;
         int indexOfPivot = end-len_min+1;
-
-        while(indexOfGreater < k+len_min) {
+        while(indexOfGreater < firstGreater+len_min) {
             exchange(a, indexOfGreater++, indexOfPivot++);
         }
 
-        partition2(a, start, k-1);
-        partition2(a, k, end);
+        partition2(a, start, firstGreater-1);
+        partition2(a, end-pivot+firstGreater+1, end);
     }
 }
