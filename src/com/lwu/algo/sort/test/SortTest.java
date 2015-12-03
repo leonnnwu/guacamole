@@ -86,6 +86,21 @@ public class SortTest {
     }
 
     @Test
+    public void testQuickSort3(){
+        QuickSort quickSort = new QuickSort();
+
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
+
+        quickSort.sort2(localArray);
+
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        quickSort.sort2(localArray);
+        assertResult(OUTPUT_LONG, localArray);
+    }
+
+    @Test
     public void testMergeSort() {
         SortBase mergeSort = new MergeSort();
 
