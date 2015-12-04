@@ -115,6 +115,21 @@ public class SortTest {
         assertResult(OUTPUT_LONG, localArray);
     }
 
+    @Test
+    public void testMergeSort2() {
+        MergeSort mergeSort = new MergeSort();
+
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
+
+        mergeSort.sort2(localArray);
+
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        mergeSort.sort2(localArray);
+        assertResult(OUTPUT_LONG, localArray);
+    }
+
     private void assertResult(Comparable[] expect, Comparable[] actual) {
         for(int i=0; i<expect.length; i++) {
             Assert.assertEquals(actual[i], expect[i]);
