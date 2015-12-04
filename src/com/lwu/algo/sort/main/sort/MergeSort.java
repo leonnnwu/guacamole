@@ -25,8 +25,6 @@ public class MergeSort extends SortBase{
      * @param a
      */
     public void sort2(Comparable[] a) {
-        System.out.println("=================");
-        printOut(a);
         splitAndMerge2(a, 0, a.length-1);
     }
 
@@ -76,8 +74,8 @@ public class MergeSort extends SortBase{
      * @param end
      */
     private void splitAndMerge2(Comparable[] a, int start, int end) {
-        for(int width = 1; width<=end; width = 2*width) {
-            for(int i=start; i+width-1 <= end; i = i + 2*width) {
+        for(int width = 1; width < end; width = 2*width) {
+            for(int i=start; i+width-1 < end; i = i+2*width) {
                 merge(a, i, i+width-1, Math.min(i+2*width-1, end));
             }
         }
