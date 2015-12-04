@@ -3,6 +3,14 @@ package com.lwu.algo.sort.main.sort;
 import java.util.Arrays;
 
 /**
+ *
+ * Only stable O(nlgn) sorting algorithm
+ *
+ * Situations:
+ * Stability is required,
+ * Sorting linked lists
+ * or Random access is much more expensive and sequential access
+ *
  * Stable:  Yes
  * Extra Space: O(n)
  * Time complexity: O(nlgn)
