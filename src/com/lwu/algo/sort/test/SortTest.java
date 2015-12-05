@@ -130,6 +130,21 @@ public class SortTest {
         assertResult(OUTPUT_LONG, localArray);
     }
 
+    @Test
+    public void testHeapSort() {
+        SortBase heapSort = new HeapSort();
+
+        Integer[] localArray = Arrays.copyOf(INPUT_SHORT, INPUT_SHORT.length);
+
+        heapSort.sort(localArray);
+
+        assertResult(OUTPUT_SHORT, localArray);
+
+        localArray = Arrays.copyOf(INPUT_LONG, INPUT_LONG.length);
+        heapSort.sort(localArray);
+        assertResult(OUTPUT_LONG, localArray);
+    }
+
     private void assertResult(Comparable[] expect, Comparable[] actual) {
         for(int i=0; i<expect.length; i++) {
             Assert.assertEquals(actual[i], expect[i]);
