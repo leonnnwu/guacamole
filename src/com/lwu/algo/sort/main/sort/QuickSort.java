@@ -8,6 +8,10 @@ import java.util.Random;
  *  2. Partition
  *  3. Recursive
  *
+ * Stable:  No
+ * Extra Space: O(lgn) recursive
+ * Time complexity: O(n^2) when few unique keys, but typically O(nlgn)
+ * Adaptive: No
  */
 public class QuickSort extends SortBase {
 
