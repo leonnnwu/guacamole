@@ -60,4 +60,16 @@ public class HeapSort extends SortBase {
             k=j;
         }
     }
+
+    /**
+     * Sink from i in a[1..n]
+     * @param a
+     * @param i
+     * @param N
+     */
+    private void sink2(Comparable[] a, int i, int N) {
+        // {lc, rc, mc} = {left, right, max} child index
+        int lc = 2*i;
+
+    }
 }
