@@ -1,4 +1,4 @@
-package com.lwu.algo.sort.main.sort;
+package com.lwu.algo.sort;
 
 /**
  * Find the smallest value and put on the left

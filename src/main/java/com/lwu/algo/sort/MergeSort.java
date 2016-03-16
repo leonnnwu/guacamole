@@ -1,4 +1,4 @@
-package com.lwu.algo.sort.main.sort;
+package com.lwu.algo.sort;
 
 import java.util.Arrays;
 

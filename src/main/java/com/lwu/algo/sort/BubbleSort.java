@@ -1,4 +1,4 @@
-package com.lwu.algo.sort.main.sort;
+package com.lwu.algo.sort;
 
 /**
  * Like a bubble move to the top

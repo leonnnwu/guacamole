@@ -1,6 +1,6 @@
-package com.lwu.algo.sort.test;
+package com.lwu.algo.sort;
 
-import com.lwu.algo.sort.main.sort.*;
+import com.lwu.algo.sort.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
