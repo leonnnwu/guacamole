@@ -1,0 +1,13 @@
+project(':Algorithm') {
+
+    description = "This is the sub project/module of Guacamole project for algo and data structure codes."
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+        }
+    }
+}
+
