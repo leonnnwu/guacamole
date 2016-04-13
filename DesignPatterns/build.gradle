@@ -1,0 +1,12 @@
+project(':DesignPatterns') {
+
+    description = "This is the sub project/module of Guacamole project for design patterns."
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+        }
+    }
+}
