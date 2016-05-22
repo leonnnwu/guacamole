@@ -35,5 +35,18 @@ public class PascalsTriangleOneTest {
         Assert.assertTrue(Arrays.equals(result.get(3).toArray(), expect4));
         Assert.assertTrue(Arrays.equals(result.get(4).toArray(), expect5));
 
+
+        result = pascalsTriangleOne.generateOptimized(5);
+        Assert.assertEquals(result.get(0).size(), 1);
+        Assert.assertEquals(result.get(1).size(), 2);
+        Assert.assertEquals(result.get(2).size(), 3);
+        Assert.assertEquals(result.get(3).size(), 4);
+        Assert.assertEquals(result.get(4).size(), 5);
+
+        Assert.assertTrue(Arrays.equals(result.get(0).toArray(), expect1));
+        Assert.assertTrue(Arrays.equals(result.get(1).toArray(), expect2));
+        Assert.assertTrue(Arrays.equals(result.get(2).toArray(), expect3));
+        Assert.assertTrue(Arrays.equals(result.get(3).toArray(), expect4));
+        Assert.assertTrue(Arrays.equals(result.get(4).toArray(), expect5));
     }
 }

@@ -1,5 +1,7 @@
 package com.lwu.algo.array;
 
+import com.lwu.algo.dp.BinomialCoefficient;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,12 @@ import java.util.List;
  */
 public class PascalsTriangleOne {
 
+    /**
+     * Time complexity: O(n^2)
+     * Extra space: O(n)
+     * @param numRows
+     * @return
+     */
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList();
 
@@ -20,7 +28,7 @@ public class PascalsTriangleOne {
         pre.add(1);
         result.add(pre);
 
-        for(int i=1; i<=numRows; i++) {
+        for(int i=2; i<=numRows; i++) {
             List<Integer> cur = new ArrayList();
             cur.add(1);
 
@@ -31,6 +39,42 @@ public class PascalsTriangleOne {
             result.add(cur);
             pre = cur;
         }
+        return result;
+    }
+
+    /**
+     * Time complexity: O(n^2)
+     * Extra space: O(n)
+     * @param numRows
+     * @return
+     */
+    public List<List<Integer>> generateOptimized(int numRows) {
+        List<List<Integer>> result = new ArrayList();
+
+        if(numRows<=0) {
+            return result;
+        }
+
+        for(int line = 1; line <= numRows; line++) {
+            List<Integer> cur = new ArrayList<Integer>();
+            int holder = 1;
+
+            if(line == 1) {
+                cur.add(holder);
+                result.add(cur);
+                continue;
+            }
+
+            cur.add(holder);
+            for(int i=1; i<line-1; i++) {
+                holder = holder * (line-i) / i;
+                cur.add(holder);
+            }
+
+            cur.add(1);
+            result.add(cur);
+        }
+
         return result;
     }
 }
