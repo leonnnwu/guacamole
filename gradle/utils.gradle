@@ -1,0 +1,23 @@
+/**
+ * The version can be provided by the gradle property releaseVersion.
+ * i.e. -PreleaseVersion=1.0
+ *
+ * Or it can be retrieved from properties file.
+ * @return
+ */
+String getPublishVersion() {
+    String version = "NA"
+
+    if(project.has("releaseVersion")) {
+        version = "$releaseVersion"
+    } else {
+        Properties projectProperties = new Properties();
+        FileInputStream projectFileStream = new FileInputStream("$rootDir/gradle.properties")
+        version = projectProperties['app.product.version']
+    }
+
+    version = "${version}-SNAPSHOT"
+}
+
+//Make it available to other subprojects
+ext.getPublishVersion = this.&getPublishVersion
