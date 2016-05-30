@@ -1,5 +1,7 @@
 package com.lwu.spring;
 
+import com.lwu.spring.customevents.CustomEventConfig;
+import com.lwu.spring.customevents.CustomEventPublisher;
 import com.lwu.spring.denpendency.injection.annotation.Profile;
 import com.lwu.spring.denpendency.injection.beanreference.TextEditor;
 import com.lwu.spring.denpendency.injection.collection.JavaCollection;
@@ -8,6 +10,7 @@ import com.lwu.spring.denpendency.injection.configuation.*;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,7 +21,29 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testConfigurationImport();
+        testCustomEvent();
+    }
+
+    private static void testCustomEvent() {
+        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(CustomEventConfig.class);
+
+        CustomEventPublisher customEventPublisher = ctx.getBean("customEventPublisher", CustomEventPublisher.class);
+        customEventPublisher.publish();
+        customEventPublisher.publish();
+    }
+
+    private static void testAppEvents() {
+        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigB.class);
+
+        ctx.start();
+
+        A a1 = ctx.getBean(A.class);
+        A a2 = ctx.getBean(A.class);
+        System.out.println(a1);
+        System.out.println(a2);
+        B b = ctx.getBean(B.class);
+
+        ctx.stop();
     }
 
     private static void testConfigurationImport() {
