@@ -1,6 +1,7 @@
 package com.lwu.spring.helloworld;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -9,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("helloworld/Beans.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("helloworld/Beans.xml");
 
         HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
 
@@ -19,5 +20,7 @@ public class MainApp {
         HelloWorld helloWorld2 = context.getBean("helloWorld", HelloWorld.class);
 
         helloWorld2.getMessage();
+
+        context.registerShutdownHook();
     }
 }
