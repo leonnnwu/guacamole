@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testDependencyInjectionConstructorBased2();
+        testDependencyInjectionConstructorBased3();
     }
 
     private static void testDependencyInjectionConstructorBased1() {
@@ -22,6 +22,13 @@ public class MainApp {
 
     private static void testDependencyInjectionConstructorBased2() {
         ApplicationContext context = new ClassPathXmlApplicationContext("di/Beans2.xml");
+
+        TextEditor textEditor = context.getBean("textEditor", TextEditor.class);
+        textEditor.spellCheck();
+    }
+
+    private static void testDependencyInjectionConstructorBased3() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Beans3.xml");
 
         TextEditor textEditor = context.getBean("textEditor", TextEditor.class);
         textEditor.spellCheck();
