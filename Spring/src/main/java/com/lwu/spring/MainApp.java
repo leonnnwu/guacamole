@@ -2,6 +2,7 @@ package com.lwu.spring;
 
 import com.lwu.spring.denpendency.injection.beanreference.TextEditor;
 import com.lwu.spring.denpendency.injection.collection.JavaCollection;
+import com.lwu.spring.denpendency.injection.required.Student;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
@@ -14,7 +15,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        autowiringInXML();
+        testAutowiredSetter();
+    }
+
+    private static void testAutowiredSetter() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Annotation2.xml");
+        Student student = context.getBean("student", Student.class);
+
+        System.out.println("Name: " + student.getName());
+        System.out.println("Age: " + student.getAge());
+        System.out.println("Book: " + student.getBook().getName());
+    }
+
+    private static void testAnnotationRequired() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Annotation.xml");
+        Student student = context.getBean("student", Student.class);
+
+        System.out.println("Name: " + student.getName());
+        System.out.println("Age: " + student.getAge());
     }
 
     private static void autowiringInXML() {
