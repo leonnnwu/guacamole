@@ -1,6 +1,6 @@
 package com.lwu.spring;
 
-import com.lwu.spring.denpendency.injection.TextEditor;
+import com.lwu.spring.denpendency.injection.beanreference.TextEditor;
 import com.lwu.spring.denpendency.injection.collection.JavaCollection;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
@@ -14,7 +14,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        injectCollection();
+        autowiringInXML();
+    }
+
+    private static void autowiringInXML() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Autowiring.xml");
+        TextEditor textEditor = context.getBean("textEditor", TextEditor.class);
+        textEditor.spellCheck();
     }
 
     private static void injectCollection() {

@@ -1,4 +1,4 @@
-package com.lwu.spring.denpendency.injection;
+package com.lwu.spring.denpendency.injection.beanreference;
 
 /**
  * Created by Leon on 5/29/16.

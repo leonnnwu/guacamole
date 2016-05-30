@@ -3,9 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="textEditor" class="com.lwu.spring.denpendency.injection.beanreference.TextEditor">
-        <property name="spellChecker" ref="spellChecker"/>
+    <!--<bean id="textEditor" class="com.lwu.spring.denpendency.injection.beanreference.TextEditor" autowire="byName"/>-->
+    <bean id="textEditor" class="com.lwu.spring.denpendency.injection.beanreference.TextEditor" autowire="constructor">
+        <constructor-arg index="1" value="Leo Wu"/>
     </bean>
 
     <bean id="spellChecker" class="com.lwu.spring.denpendency.injection.beanreference.SpellChecker"/>
+
 </beans>

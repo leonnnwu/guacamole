@@ -1,4 +1,4 @@
-package com.lwu.spring.denpendency.injection;
+package com.lwu.spring.denpendency.injection.beanreference;
 
 /**
  * Created by Leon on 5/29/16.
@@ -8,6 +8,11 @@ public class TextEditor {
 
     public TextEditor() {
 
+    }
+
+    public TextEditor(SpellChecker spellChecker1, String name) {
+        System.out.println("Inside TextEditor constructor + " + name);
+        this.spellChecker = spellChecker1;
     }
 
     public TextEditor(SpellChecker spellChecker1, SpellChecker spellChecker2) {
