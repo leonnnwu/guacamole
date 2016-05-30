@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Only stable O(nlgn) sorting algorithm
  *
  * Situations:
- * Stability is required,
+ * Stability is annotation,
  * Sorting linked lists
  * or Random access is much more expensive and sequential access
  *

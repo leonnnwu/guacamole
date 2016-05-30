@@ -1,4 +1,4 @@
-package com.lwu.spring.denpendency.injection.required;
+package com.lwu.spring.denpendency.injection.annotation;
 
 import org.springframework.beans.factory.annotation.Required;
 

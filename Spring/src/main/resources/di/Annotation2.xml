@@ -6,12 +6,12 @@
 
     <context:annotation-config/>
 
-    <bean id="student" class="com.lwu.spring.denpendency.injection.required.Student">
+    <bean id="student" class="com.lwu.spring.denpendency.injection.annotation.Student">
         <property name="name" value="Zara"/>
         <property name="age" value="11"/>
     </bean>
 
-    <bean id="book" class="com.lwu.spring.denpendency.injection.required.Book">
+    <bean id="book" class="com.lwu.spring.denpendency.injection.annotation.Book">
         <property name="name" value="Json"/>
     </bean>
 </beans>

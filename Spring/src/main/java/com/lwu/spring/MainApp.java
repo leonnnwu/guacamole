@@ -1,8 +1,9 @@
 package com.lwu.spring;
 
+import com.lwu.spring.denpendency.injection.annotation.Profile;
 import com.lwu.spring.denpendency.injection.beanreference.TextEditor;
 import com.lwu.spring.denpendency.injection.collection.JavaCollection;
-import com.lwu.spring.denpendency.injection.required.Student;
+import com.lwu.spring.denpendency.injection.annotation.Student;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +16,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testAutowiredSetter();
+        testQulifier();
+    }
+
+    private static void testQulifier() {
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("di/Annotation3.xml");
+
+        Profile profile = context.getBean("profile", Profile.class);
+
+        profile.printAge();
+        profile.printName();
+
+        context.registerShutdownHook();
     }
 
     private static void testAutowiredSetter() {

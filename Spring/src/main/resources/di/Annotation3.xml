@@ -6,8 +6,21 @@
 
     <context:annotation-config/>
 
-    <bean id="student" class="com.lwu.spring.denpendency.injection.annotation.Student">
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
+    <bean id="profile" class="com.lwu.spring.denpendency.injection.annotation.Profile"/>
+
+    <bean id="student1" class="com.lwu.spring.denpendency.injection.annotation.Student">
         <property name="name" value="Zara"/>
         <property name="age" value="11"/>
+    </bean>
+
+    <bean id="student2" class="com.lwu.spring.denpendency.injection.annotation.Student">
+        <property name="name" value="Jocy"/>
+        <property name="age" value="12"/>
+    </bean>
+
+    <bean id="book" class="com.lwu.spring.denpendency.injection.annotation.Book">
+        <property name="name" value="Json"/>
     </bean>
 </beans>
