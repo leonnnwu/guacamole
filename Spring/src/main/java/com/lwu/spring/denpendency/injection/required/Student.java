@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Required;
 public class Student {
     private Integer age;
     private String name;
+
+    @Autowired
     private Book book;
 
     @Required
@@ -27,7 +29,6 @@ public class Student {
         return name;
     }
 
-    @Autowired
     public void setBook(Book book) {
         this.book = book;
     }
