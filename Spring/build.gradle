@@ -12,5 +12,7 @@ project(':Spring') {
 
     dependencies {
         compile libraries.springContext
+        compile libraries.aspectjrt
+        compile libraries.aspectjweaver
     }
 }
