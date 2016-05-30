@@ -1,5 +1,7 @@
-package com.lwu.spring.helloworld;
+package com.lwu.spring;
 
+import com.lwu.spring.helloworld.HelloUSA;
+import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,7 +12,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testBeanDefinitionInheritance();
+        testDependencyInjectionConstructorBased();
+    }
+
+    private static void testDependencyInjectionConstructorBased() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Beans.xml");
     }
 
     private static void testBeanScope() {
