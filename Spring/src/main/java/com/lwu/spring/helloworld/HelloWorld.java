@@ -1,9 +1,12 @@
 package com.lwu.spring.helloworld;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
 /**
  * Created by Leon on 5/29/16.
  */
-public class HelloWorld {
+public class HelloWorld implements InitializingBean, DisposableBean{
 
     private String message;
 
@@ -15,12 +18,13 @@ public class HelloWorld {
         System.out.println("Your Message : " + message);
     }
 
-    public void init() {
-        System.out.println("Bean is going through init.");
-    }
-
-    public void destroy() {
+    @Override
+    public void destroy() throws Exception{
         System.out.println("Bean will destroy now.");
     }
 
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Bean is going through init.");
+    }
 }
