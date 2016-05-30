@@ -1,5 +1,6 @@
 package com.lwu.spring;
 
+import com.lwu.spring.denpendency.injection.TextEditor;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
@@ -12,11 +13,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testDependencyInjectionConstructorBased();
+        testDependencyInjectionConstructorBased2();
     }
 
-    private static void testDependencyInjectionConstructorBased() {
+    private static void testDependencyInjectionConstructorBased1() {
         ApplicationContext context = new ClassPathXmlApplicationContext("di/Beans.xml");
+    }
+
+    private static void testDependencyInjectionConstructorBased2() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Beans2.xml");
+
+        TextEditor textEditor = context.getBean("textEditor", TextEditor.class);
+        textEditor.spellCheck();
     }
 
     private static void testBeanScope() {
