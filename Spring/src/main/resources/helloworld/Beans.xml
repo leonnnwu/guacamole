@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
->
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beanTemplate" abstract="true">
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+        <property name="message3" value="Namaste India!"/>
+    </bean>
 
     <bean id="helloWorld" class="com.lwu.spring.helloworld.HelloWorld">
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+    </bean>
+
+    <bean id="helloUSA" class="com.lwu.spring.helloworld.HelloUSA" parent="beanTemplate">
+        <property name="message1" value="Hello USA!"/>
+        <property name="message3" value="Namaste USA!"/>
     </bean>
 
     <bean class="com.lwu.spring.helloworld.InitHelloWorld"/>

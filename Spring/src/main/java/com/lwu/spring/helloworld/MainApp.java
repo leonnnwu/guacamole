@@ -10,17 +10,35 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
+        testBeanDefinitionInheritance();
+    }
+
+    private static void testBeanScope() {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("helloworld/Beans.xml");
 
         HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
 
-        helloWorld.setMessage("Hello World 1");
-        helloWorld.getMessage();
+        helloWorld.setMessage1("Hello World 1");
+        helloWorld.getMessage1();
 
         HelloWorld helloWorld2 = context.getBean("helloWorld", HelloWorld.class);
 
-        helloWorld2.getMessage();
+        helloWorld2.getMessage1();
 
         context.registerShutdownHook();
+    }
+
+    private static void testBeanDefinitionInheritance() {
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("helloworld/Beans.xml");
+
+        HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
+
+        helloWorld.getMessage1();
+        helloWorld.getMessage2();
+
+        HelloUSA objB = context.getBean("helloUSA", HelloUSA.class);
+        objB.getMessage1();
+        objB.getMessage2();
+        objB.getMessage3();
     }
 }
