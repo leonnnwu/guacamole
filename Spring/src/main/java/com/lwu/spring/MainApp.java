@@ -1,6 +1,7 @@
 package com.lwu.spring;
 
 import com.lwu.spring.aspectj.AspectJConfig;
+import com.lwu.spring.aspectj.AspectjConfigLTW;
 import com.lwu.spring.customevents.CustomEventConfig;
 import com.lwu.spring.customevents.CustomEventPublisher;
 import com.lwu.spring.denpendency.injection.annotation.Profile;
@@ -22,7 +23,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testAspectJ();
+        testAspectJLTW();
+    }
+
+    private static void testAspectJLTW() {
+        ConfigurableApplicationContext ctx = new AnnotationConfigApplicationContext(AspectjConfigLTW.class);
+
+        com.lwu.spring.aspectj.Student student = ctx.getBean(com.lwu.spring.aspectj.Student.class);
+
+        student.setName("Jacy");
+        student.setAge(11);
+        student.getAge();
+        student.getName();
+        student.printThrowException();
+
     }
 
     private static void testAspectJ() {

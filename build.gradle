@@ -8,9 +8,9 @@ ext {
             guava:              "com.google.guava:guava:19.0",
             commonsLang:        "org.apache.commons:commons-lang3:3.4",
             springContext:      "org.springframework:spring-context:4.2.6.RELEASE",
-            aspectjrt:            "org.aspectj:aspectjrt:1.8.9",
+            aspectjrt:          "org.aspectj:aspectjrt:1.8.9",
             aspectjweaver:      "org.aspectj:aspectjweaver:1.8.9",
-
+            springinstrument:   "org.springframework:spring-instrument:4.2.6.RELEASE",
 
             testNg:             "org.testng:testng:6.9.10",
             remoteTestNg:       "org.testng:testng-remote:1.0.1",

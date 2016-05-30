@@ -14,5 +14,6 @@ project(':Spring') {
         compile libraries.springContext
         compile libraries.aspectjrt
         compile libraries.aspectjweaver
+        runtime libraries.springinstrument
     }
 }
