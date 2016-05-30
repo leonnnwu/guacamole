@@ -4,9 +4,11 @@ import com.lwu.spring.denpendency.injection.annotation.Profile;
 import com.lwu.spring.denpendency.injection.beanreference.TextEditor;
 import com.lwu.spring.denpendency.injection.collection.JavaCollection;
 import com.lwu.spring.denpendency.injection.annotation.Student;
+import com.lwu.spring.denpendency.injection.configuation.*;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,7 +18,35 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testQulifier();
+        testConfigurationImport();
+    }
+
+    private static void testConfigurationImport() {
+        AbstractApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigB.class);
+
+        A a1 = ctx.getBean(A.class);
+        A a2 = ctx.getBean(A.class);
+        System.out.println(a1);
+        System.out.println(a2);
+        B b = ctx.getBean(B.class);
+
+        ctx.registerShutdownHook();
+    }
+
+    private static void testConfiguration2() {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(TextEditorConfig.class);
+
+        TextEditor textEditor = ctx.getBean(TextEditor.class);
+        textEditor.spellCheck();
+    }
+
+    private static void testConfiguration1() {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfig.class);
+
+        HelloWorld helloWorld = ctx.getBean(HelloWorld.class);
+
+        helloWorld.setMessage1("Hello USA!");
+        helloWorld.getMessage1();
     }
 
     private static void testQulifier() {
