@@ -7,6 +7,7 @@ ext {
     libraries = [
             guava:              "com.google.guava:guava:19.0",
             commonsLang:        "org.apache.commons:commons-lang3:3.4",
+            springContext:     "org.springframework:spring-context:4.2.6.RELEASE",
 
             testNg:             "org.testng:testng:6.9.10",
             remoteTestNg:       "org.testng:testng-remote:1.0.1",

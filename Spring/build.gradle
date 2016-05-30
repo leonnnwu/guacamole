@@ -1,0 +1,16 @@
+project(':Spring') {
+
+    description = "This is the sub project/module of Guacamole project for spring framework playaround code"
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+        }
+    }
+
+    dependencies {
+        compile libraries.springContext
+    }
+}

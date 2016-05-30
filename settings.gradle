@@ -1,4 +1,5 @@
 rootProject.name= 'Guacamole'
 include 'Algorithm'
 include 'DesignPatterns'
+include 'Spring'
 
