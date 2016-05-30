@@ -1,6 +1,7 @@
 package com.lwu.spring;
 
 import com.lwu.spring.denpendency.injection.TextEditor;
+import com.lwu.spring.denpendency.injection.collection.JavaCollection;
 import com.lwu.spring.helloworld.HelloUSA;
 import com.lwu.spring.helloworld.HelloWorld;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +14,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 
     public static void main(String[] args) {
-        testDependencyInjectionConstructorBased4();
+        injectCollection();
+    }
+
+    private static void injectCollection() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("di/Collection.xml");
+
+        JavaCollection javaCollection = context.getBean("javaCollection", JavaCollection.class);
+
+        javaCollection.getAddressList();
+        javaCollection.getAddressSet();
+        javaCollection.getAddressMap();
+        javaCollection.getAddressProp();
     }
 
     private static void testDependencyInjectionConstructorBased1() {
