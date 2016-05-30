@@ -9,9 +9,12 @@ import org.springframework.beans.factory.annotation.Required;
 public class Student {
     private Integer age;
     private String name;
+    private Book book;
 
     @Autowired
-    private Book book;
+    public Student(Book book) {
+        this.book = book;
+    }
 
     @Required
     public void setAge(Integer age) {
