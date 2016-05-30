@@ -19,7 +19,7 @@ public class HelloWorld {
         System.out.println("Bean is going through init.");
     }
 
-    public void destory() {
+    public void destroy() {
         System.out.println("Bean will destroy now.");
     }
 
