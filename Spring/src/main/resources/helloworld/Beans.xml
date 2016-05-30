@@ -6,4 +6,6 @@
 
     <bean id="helloWorld" class="com.lwu.spring.helloworld.HelloWorld">
     </bean>
+
+    <bean class="com.lwu.spring.helloworld.InitHelloWorld"/>
 </beans>
