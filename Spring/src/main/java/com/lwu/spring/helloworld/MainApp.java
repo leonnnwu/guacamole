@@ -13,6 +13,11 @@ public class MainApp {
 
         HelloWorld helloWorld = context.getBean("helloWorld", HelloWorld.class);
 
+        helloWorld.setMessage("Hello World 1");
         helloWorld.getMessage();
+
+        HelloWorld helloWorld2 = context.getBean("helloWorld", HelloWorld.class);
+
+        helloWorld2.getMessage();
     }
 }
