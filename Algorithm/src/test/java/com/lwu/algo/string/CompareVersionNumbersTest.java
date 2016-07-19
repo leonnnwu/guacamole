@@ -20,5 +20,17 @@ public class CompareVersionNumbersTest {
         Assert.assertEquals(compareVersionNumbers.compareVersion("1", "0"), 1);
         Assert.assertEquals(compareVersionNumbers.compareVersion("0.1", "0.0.1"), 1);
         Assert.assertEquals(compareVersionNumbers.compareVersion("1.0", "1"), 0);
+        Assert.assertEquals(compareVersionNumbers.compareVersion("1", "1.1"), -1);
+    }
+
+    @Test
+    public void testCompareVersion2() throws Exception {
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("0.1", "1.1"), -1);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("1.1", "1.2"), -1);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("1.2", "13.37"), -1);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("1", "0"), 1);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("0.1", "0.0.1"), 1);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("1.0", "1"), 0);
+        Assert.assertEquals(compareVersionNumbers.compareVersion2("1", "1.1"), -1);
     }
 }

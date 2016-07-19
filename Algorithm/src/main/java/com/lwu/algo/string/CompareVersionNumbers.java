@@ -29,13 +29,21 @@ public class CompareVersionNumbers {
             return 0;
         }
 
-        long[] longerVersion = maxLength == numsOfVersion1.length ? numsOfVersion1 : numsOfVersion2;
-
-        for(int i=minLength; i<maxLength; i++) {
-            if(longerVersion[i] > 0) {
-                return 1;
+        if(maxLength == numsOfVersion1.length) {
+            for(int i=minLength; i<maxLength; i++) {
+                if(numsOfVersion1[i] > 0) {
+                    return 1;
+                }
+            }
+        }else {
+            for(int i=minLength; i<maxLength; i++) {
+                if(numsOfVersion2[i] > 0) {
+                    return -1;
+                }
             }
         }
+
+
 
         return 0;
     }
@@ -47,6 +55,33 @@ public class CompareVersionNumbers {
             nums[i] = Long.parseLong(numsOfVersion[i]);
         }
         return nums;
+    }
+
+    public int compareVersion2(String version1, String version2) {
+        String[] arr1 = version1.split("\\.");
+        String[] arr2 = version2.split("\\.");
+
+        int i=0;
+        while(i<arr1.length || i<arr2.length) {
+            if(i<arr1.length && i<arr2.length) {
+                if(Integer.parseInt(arr1[i]) > Integer.parseInt(arr2[i])) {
+                    return 1;
+                } else if(Integer.parseInt(arr1[i]) < Integer.parseInt(arr2[i])) {
+                    return -1;
+                }
+            } else if(i<arr1.length) {
+                if(Integer.parseInt(arr1[i]) > 0) {
+                    return 1;
+                }
+            } else {
+                if(Integer.parseInt(arr2[i]) > 0) {
+                    return -1;
+                }
+            }
+            i++;
+        }
+
+        return 0;
     }
 
 }
