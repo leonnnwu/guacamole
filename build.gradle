@@ -12,7 +12,7 @@ ext {
             aspectjweaver:      "org.aspectj:aspectjweaver:1.8.9",
             springinstrument:   "org.springframework:spring-instrument:4.2.6.RELEASE",
 
-            testNg:             "org.testng:testng:6.9.10",
+            testNg:             "org.testng:testng:6.9.9",
             remoteTestNg:       "org.testng:testng-remote:1.0.1",
             jMockit:            "com.googlecode.jmockit:jmockit:1.7",
             jacoco:             "org.jacoco:jacoco:0.7.6.201602180812"
