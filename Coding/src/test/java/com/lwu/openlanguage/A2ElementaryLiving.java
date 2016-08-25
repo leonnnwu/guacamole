@@ -1,0 +1,81 @@
+package com.lwu.openlanguage;
+
+/**
+ * Created by lwu on 8/25/16.
+ */
+public class A2ElementaryLiving {
+
+    public static String[] numbers = {
+            "87",
+            "220",
+            "222",
+            "223",
+            "225",
+            "226",
+            "227",
+            "229",
+            "230",
+            "231",
+            "232",
+            "233",
+            "236",
+            "262",
+            "265",
+            "313",
+            "314",
+            "325",
+            "332",
+            "351",
+            "369",
+            "395",
+            "408",
+            "459",
+            "695",
+            "743",
+            "764",
+            "802",
+            "821",
+            "836",
+            "847",
+            "886",
+            "946",
+            "975"
+    };
+
+    public static String[] names = {
+            "will-you-be-free-tonight.mp3",
+            "small-talk.mp3",
+            "what-s-your-name-again.mp3",
+            "road-trip.mp3",
+            "hotel-upgrade.mp3",
+            "make-left-here.mp3",
+            "where-am-i.mp3",
+            "coffee-shop-in-seattle.mp3",
+            "happy-hour.mp3",
+            "ordering-pasta.mp3",
+            "it-s-my-treat.mp3",
+            "where-should-we-eat.mp3",
+            "describing-new-hairstyle.mp3",
+            "buying-computer.mp3",
+            "computer-help.mp3",
+            "pizza-delivery.mp3",
+            "family-barbecue.mp3",
+            "will-you-be-my-girlfriend.mp3",
+            "my-new-boyfriend.mp3",
+            "new-friends-in-shanghai.mp3",
+            "introducing-new-friends.mp3",
+            "water-cooler-talk.mp3",
+            "food-recommendations.mp3",
+            "talking-about-trip.mp3",
+            "healthy-food.mp3",
+            "cut-it-out.mp3",
+            "at-the-library.mp3",
+            "text-me.mp3",
+            "what-bargain.mp3",
+            "coins-money.mp3",
+            "lending-money.mp3",
+            "baking-cake.mp3",
+            "living-your-parents.mp3",
+            "making-breakfast.mp3"
+    };
+}
