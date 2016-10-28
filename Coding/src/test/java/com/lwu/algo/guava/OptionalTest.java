@@ -51,5 +51,9 @@ public class OptionalTest {
         Assert.assertEquals(Optional.fromNullable(null).asSet().size(), 0);
     }
 
+    @Test
+    public void myTest() {
+        Assert.assertEquals("".substring(0,1), "");
+    }
 
 }
